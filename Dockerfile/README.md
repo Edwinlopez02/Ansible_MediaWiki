@@ -4,7 +4,7 @@ Se configuran los hosts de las imagenes que se van a crear.
 
  Creación del docker 
 ------------------------
--Primer paso
+- Primer paso
 Creación de la imagen en la que se basará el contenedor.
 
 Se ejecuta el siguiente comando para la realización del pasos
@@ -13,7 +13,7 @@ Se ejecuta el siguiente comando para la realización del pasos
 docker build -t server .
 ```
 Y tenemos creado nuestra imagen con ubuntu y ssh activo.
--Segundo paso 
+- Segundo paso 
 
 ```
 Nombre del contenedor main = server_main
@@ -31,7 +31,7 @@ Los nombre de los alias que tienen los contenedores
 wiki_main 
  wiki_db 
 ```
--Tercer Paso
+- Tercer Paso
 
 Registramos los alias de la siguiente manera:
 
@@ -39,7 +39,8 @@ Registramos los alias de la siguiente manera:
 
 Y con esto contamos con los contenedores creados y con posibilidad de identificación.
 
--Cuarto paso
+- Cuarto paso
+
 Realiza una prueba de conexión a las maquinas que se crearon recientemente, por defecto el paso anterior crea n cantidad de dockers con el
 ```
 $ ssh root@wiki_main -p 2221 -i ../key
