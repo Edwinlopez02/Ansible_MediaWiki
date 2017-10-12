@@ -23,7 +23,7 @@ $ ansible-playbook -i hosts Mysql.yml
 ```
 
 Ejecutar rol MediaWiki 
-
+---------
 Para la ejecución del rol apache se utiliza el siguiente comandos
 
 ```
