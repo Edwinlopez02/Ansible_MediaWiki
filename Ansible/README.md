@@ -6,25 +6,36 @@ Se han creado 3 roles principales segun lo requerimientos pedidos por MediaWiki,
 2. MySQL
 3. MediaWiki
 
+Paso 1: instalación de los servidores web y de archivos
+------------------------
+Instalamos el servidor web en el wiki_web_server
 
-Ejecutar rol Apache 
---------
+``ansible-playbook -i ../hosts webserver.yml``
 
-Para la ejecución del rol apache se utiliza el siguiente comando
-```
-$ ansible-playbook -i hosts Apache.yml
-```
+Paso 2: instalación del servidor Mysql.
+-------------------------
 
-Ejecutar rol MySQL 
---------
-Para la ejecución del rol MySQL se utiliza el siguiente comando
-```
-$ ansible-playbook -i hosts Mysql.yml
-```
+Intalamos el servidor mysql en el wiki_mysql_server
 
-Ejecutar rol MediaWiki 
+``ansible-playbook -i ../hosts sqlserver.yml``
+
+Este comando nos ayudará a verificar si la conexion fue correcta :
+
+``ssh root@server02 -p 2222 -i ../key.private``
+
+Luego ejecutamos :
+
+``mysql -h localhost -u root -p``
+
+Donde nos debe mostrar lo siguiente:
+
+  ``mysql> <comandos respectivos>``
+  
+Luego de realizar esto, podremos hacer lo siguiente.
+
+Paso 3: Instalación de MediaWiki
 ---------
-Para la ejecución del rol apache se utiliza el siguiente comandos
+Instalamos media wiki en el servidor asignado
 
 ```
 $ ansible-playbook -i hosts MediaWiki.yml
